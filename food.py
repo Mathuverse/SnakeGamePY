@@ -13,5 +13,5 @@ class Food(Turtle):
         self.random_location()
 
     #spawn the food in random location
-        def random_location(self):
-            self.goto(random.randint(-350,350),random.randint(-350,350))
+    def random_location(self):
+        self.goto(random.randint(-350,350),random.randint(-350,350))

@@ -9,7 +9,7 @@ screen = Screen()
 snake = Snake()
 food = Food()
 score = Scoreboard()
-speed = 0.05
+speed = 0.04
 game_is_on = True
 
 #Screen setup
@@ -33,11 +33,12 @@ while game_is_on:
     #Detect food collision
     if food.distance(snake.head) < 15:
         food.random_location()
+        snake.add_segment()
         score.add_Score()
         snake.moving()
 
     #Detect wall
-    if snake.head.xcor() > 380 or snake.head.xcor()< -380 or snake.head.ycor() > 380 or snake.head.ycor()< -385:
+    if snake.head.xcor() > 380 or snake.head.xcor()< -380 or snake.head.ycor() > 390 or snake.head.ycor()< -390:
         score.game_over()
         game_is_on = False
     
@@ -45,7 +46,7 @@ while game_is_on:
     for part in snake.segments:
         if part == snake.head:
             pass
-        elif snake.head.distance(part) < 10:
+        elif snake.head.distance(part) < 7:
             score.game_over()
             game_is_on = False
 

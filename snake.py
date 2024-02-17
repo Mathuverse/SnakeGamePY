@@ -22,7 +22,7 @@ class Snake:
     #adding extra length to the snake body
     def add_segment(self):
         new_part = Turtle("square")
-        new_part.color("black")
+        new_part.color("white")
         new_part.penup()
         self.segments.append(new_part)
     
